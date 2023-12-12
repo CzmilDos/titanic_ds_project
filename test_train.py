@@ -27,9 +27,13 @@ def sample_data():
     })
     return data
 
-def test_load_data(sample_data):
-    # Teste la fonction load_data
-    df = load_data(sample_data)
+def test_load_data(tmp_path, sample_data):
+    # Enregistrement des données de test dans un fichier CSV temporaire
+    csv_path = tmp_path / "sample_data.csv"
+    sample_data.to_csv(csv_path, index=False)
+
+    # Teste de la fonction load_data
+    df = load_data(csv_path)
     assert isinstance(df, pd.DataFrame)
     assert not df.empty
 
