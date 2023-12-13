@@ -32,4 +32,5 @@ def test_data_cleaning():
     assert cleaned_data['age'].dtype == int
 
     # Vérification de l'arrondissement du prix du billet à deux chiffres après la virgule
-    assert (cleaned_data['fare'] % 0.01 == 0).all()
+    assert all(abs(cleaned_data['fare'] % 0.01) < 1e-10)
+
