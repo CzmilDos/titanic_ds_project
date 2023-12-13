@@ -10,13 +10,12 @@ def main():
     data_cleaning(data)
 
 
-
 def import_data():
     """
     Import csv file as a dataframe
     Output: data [pd.DataFrame]
     """
-    titanic =  sns.load_dataset('titanic')
+    titanic = sns.load_dataset('titanic')
     print(titanic.shape)
     return titanic
 
