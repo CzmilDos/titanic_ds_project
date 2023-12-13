@@ -41,7 +41,7 @@ def data_cleaning(data: pd.DataFrame) -> pd.DataFrame:
 
     # remplacer manquantes de embark_town par le mode
     data['embark_town'].mode()
-    data['embark_town'] = data['embark_town'].fillna(titanic2['embark_town'].mode()[0])
+    data['embark_town'] = data['embark_town'].fillna(data['embark_town'].mode()[0])
 
     # Arrondissement prix billet et conversion age
     data['fare'] = data['fare'].round(2)
