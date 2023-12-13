@@ -2,7 +2,7 @@
 Tests
 """
 import pandas as pd
-from process import import_data 
+from process import import_data
 from process import data_cleaning
 
 
