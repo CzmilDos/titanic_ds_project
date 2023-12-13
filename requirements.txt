@@ -1,2 +1,9 @@
 pandas
 seaborn
+sklearn.model_selection
+sklearn.preprocessing
+sklearn.linear_model
+sklearn.tree 
+sklearn.ensemble 
+fromsklearn.metrics
+pytest
