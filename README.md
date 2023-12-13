@@ -1,1 +1,3 @@
-# titanic_data_analysis
+## Czmil DOSSOU-YOVO
+## Aoudou DJONDANG
+## Erwan PRADEILLES
