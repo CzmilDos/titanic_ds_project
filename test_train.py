@@ -1,5 +1,6 @@
 import pandas as pd
 import pytest
+from sklearn.linear_model import LogisticRegression
 from train import load_data, preprocess_data, split_data, scale_data, train_model, evaluate_model
 
 
