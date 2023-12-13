@@ -4,10 +4,12 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 
+
 def load_data(file_path):
     """Load data from a CSV file."""
     data = pd.read_csv(file_path)
     return data
+
 
 def preprocess_data(data):
     """Preprocess data and return features (X) and labels (y)."""
@@ -16,9 +18,11 @@ def preprocess_data(data):
     y = data['Survived']
     return X, y
 
+
 def split_data(X, y, test_size=0.2, random_state=42):
     """Split data into training and testing sets."""
     return train_test_split(X, y, test_size=test_size, random_state=random_state)
+
 
 def scale_data(X_train, X_test):
     """Scale data using StandardScaler."""
@@ -27,11 +31,13 @@ def scale_data(X_train, X_test):
     X_test_scaled = scaler.transform(X_test)
     return X_train_scaled, X_test_scaled
 
+
 def train_model(X_train, y_train):
     """Train a logistic regression model."""
     model = LogisticRegression()
     model.fit(X_train, y_train)
     return model
+
 
 def evaluate_model(model, X_test, y_test):
     """Evaluate the trained model and return metrics."""
@@ -42,6 +48,7 @@ def evaluate_model(model, X_test, y_test):
     f1 = f1_score(y_test, y_pred)
     confusion = confusion_matrix(y_test, y_pred)
     return accuracy, precision, recall, f1, confusion
+
 
 def main():
     # Charger les données
@@ -73,6 +80,7 @@ def main():
     # Cross-validation
     cv_scores = cross_val_score(model, X, y, cv=5, scoring='accuracy')
     print("Cross-validation Accuracy Scores:", cv_scores)
+
 
 if __name__ == "__main__":
     main()
