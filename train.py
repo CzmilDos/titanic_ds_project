@@ -31,7 +31,7 @@ def scale_data(X_train, X_test):
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
     # Sauvegarder le scaler dans un fichier
-    joblib.dump(scaler, 'scaler.pkl')    
+    joblib.dump(scaler, 'scaler.pkl')
     return X_train_scaled, X_test_scaled
 
 
