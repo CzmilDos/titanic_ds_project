@@ -1,6 +1,5 @@
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
-from sklearn.externals import joblib
+import joblib
 
 
 def load_data(file_path):
@@ -22,16 +21,15 @@ def main():
 
     # Charger les données de test
     test_data = load_data('data/test.csv')
-    
+
     # Prétraiter les données de test
     X_test = preprocess_data(test_data)
-    
     # Charger le scaler sauvegardé dans train.py
     scaler = joblib.load('scaler.pkl')
 
     # Appliquer le scaler sur les données de test
     X_test_scaled = scaler.transform(X_test)
-    
+
     # Effectuer la prédiction
     predictions = model.predict(X_test_scaled)
 
