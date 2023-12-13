@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+from sklearn.externals import joblib
 
 
 def load_data(file_path):
@@ -29,6 +30,10 @@ def scale_data(X_train, X_test):
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
+    
+    # Sauvegarder le scaler dans un fichier
+    joblib.dump(scaler, 'scaler.pkl')
+    
     return X_train_scaled, X_test_scaled
 
 
@@ -36,6 +41,10 @@ def train_model(X_train, y_train):
     """Train a logistic regression model."""
     model = LogisticRegression()
     model.fit(X_train, y_train)
+    
+    # Sauvegarder le modèle dans un fichier
+    joblib.dump(model, 'trained_model.pkl')
+
     return model
 
 
