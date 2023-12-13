@@ -2,6 +2,7 @@ import unittest
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from your_module_name import load_data, preprocess_data, split_data, scale_data, train_model, evaluate_model
+from train import 
 
 class TestTrain(unittest.TestCase):
 
