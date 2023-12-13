@@ -1,7 +1,4 @@
 import pandas as pd
-<<<<<<< HEAD
-from train import Train
-=======
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
@@ -16,7 +13,6 @@ from sklearn.metrics import (
     confusion_matrix,
 )
 import pytest
->>>>>>> 0cff1e8f3f3909b5bda049955b7bf9b0a7af5c60
 
 from train import load_data, preprocess_data, split_data, scale_data, train_model, evaluate_model
 
