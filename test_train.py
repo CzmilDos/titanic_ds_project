@@ -1,6 +1,12 @@
 import unittest
 import pandas as pd
+<<<<<<< HEAD
 from your_module_name import Train
+=======
+from sklearn.model_selection import train_test_split
+from your_module_name import load_data, preprocess_data, split_data, scale_data, train_model, evaluate_model
+from train import 
+>>>>>>> f302d0af378e9f491b738345fd4435c4f5be6680
 
 class TestTrain(unittest.TestCase):
 
