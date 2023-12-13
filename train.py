@@ -17,7 +17,8 @@ from sklearn.metrics import (
 class Train:
     def load_data(self, file_path):
         """Load data from a CSV file."""
-        return pd.read_csv(file_path, sep=',')
+        data = pd.read_csv(file_path)
+        return data
 
     def preprocess_data(self, data):
         """Preprocess data and return features (X) and labels (y)."""
